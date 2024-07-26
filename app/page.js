@@ -7,24 +7,32 @@ import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
+import axios from "axios";
 
 async function getData() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+  try {
+    const res = await axios.get(
+      `https://dev.to/api/articles?username=${personalData.devUsername}`
+    );
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+    if (!res) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const data = await res.data;
+    console.log(data);
+    const filtered = data
+      .filter((item) => item?.cover_image || "https://picsum.photos/1920/1080")
+      .sort(() => Math.random() - 0.5);
+
+    return filtered;
+  } catch (error) {
+    console.log("error", error.message);
   }
-
-  const data = await res.json();
-  console.log(data)
-  const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
-
-  return filtered;
-};
+}
 
 export default async function Home() {
   const blogs = await getData();
-
   return (
     <>
       <HeroSection />
@@ -36,5 +44,5 @@ export default async function Home() {
       <Blog blogs={blogs} />
       <ContactSection />
     </>
-  )
-};
+  );
+}

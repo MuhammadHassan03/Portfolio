@@ -7,8 +7,8 @@ export const projectsData = [
     {
         id: 1,
         name: 'PackRat Travel Management App',
-        description: 'I have worked as a Software Engineer in this web app which is basically a freelance project. I created and managed the UI using NextJS, Vite, Typescript, TailwindCSS, Google Maps For Destinations. The app works everywhere in Europe and have a app for ios and android build using React Native.',
-        tools: ['NextJS', 'Tailwind CSS', "Google Maps", "Vite Js", "TypeScript", 'React Native', "MySQL", "Query TRPC", "Tamagui", "Google Auth"],
+        description: 'I have worked as a Remote Full Stack Developer in this web app which is basically from a USA based Company. I created and managed the UI and created Server routes also. The app works everywhere in Europe and comes with an app for both IOS and Android.',
+        tools: ['NextJS', 'Tailwind CSS', "Google Maps", "Vite Js", "TypeScript", 'React Native', "MySQL", "TRPC", "Tamagui", "Google Auth", "Express", "Drizzle", "Swagger"],
         role: 'Software Engineer',
         code: 'https://github.com/MuhammadHassan03/PackRat',
         demo: 'https://packrat.world/',
