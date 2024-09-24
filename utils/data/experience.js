@@ -2,7 +2,7 @@ export const experiences = [
   {
     id: 1,
     title: 'React Native Developer',
-    company: "Freelance Project",
+    company: "Bierman Collective",
     duration: "(Feburary 2024 - Present)"
   },
   {
