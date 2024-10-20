@@ -7,9 +7,9 @@ export const projectsData = [
     {
         id: 1,
         name: 'PackRat Travel Management App',
-        description: 'I have worked as a Remote Full Stack Developer in this web app which is basically from a USA based Company. I created and managed the UI and created Server routes also. The app works everywhere in Europe and comes with an app for both IOS and Android.',
-        tools: ['NextJS', 'Tailwind CSS', "Google Maps", "Vite Js", "TypeScript", 'React Native', "MySQL", "TRPC", "Tamagui", "Google Auth", "Express", "Drizzle", "Swagger"],
-        role: 'Software Engineer',
+        description: 'I worked as a Remote Full Stack Developer on a web application for a USA-based company. My responsibilities included designing and managing the user interface (UI) and creating server routes. The application is operational across Europe and comes with both iOS and Android versions to ensure seamless accessibility across platforms.',
+        tools: ['NextJS', 'Tailwind CSS', "Map Box", "Vite Js", "TypeScript", 'React Native', "MySQL", "TRPC", "Tamagui", "Firebase", "Express Js", "Drizzle ORM", "Swagger", "Prisma", "Solito"],
+        role: 'Software Engineer (Full Stack Developer)',
         code: 'https://github.com/MuhammadHassan03/PackRat',
         demo: 'https://packrat.world/',
         image: crefin,

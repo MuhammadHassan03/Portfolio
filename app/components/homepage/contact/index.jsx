@@ -39,7 +39,7 @@ function ContactSection() {
                 {personalData.phone}
               </span>
             </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
+            {/* <p className="text-sm md:text-xl flex items-center gap-3">
               <CiLocationOn
                 className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={36}
@@ -47,38 +47,43 @@ function ContactSection() {
               <span>
                 {personalData.address}
               </span>
-            </p>
+            </p> */}
           </div>
-          <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
-            <Link target="_blank" href={personalData.github}>
+          <div className="mt-4 lg:mt-12 flex gap-2  flex-col">
+            <Link target="_blank" href={personalData.github} className='flex items-center gap-3'>
               <IoLogoGithub
                 className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={48}
               />
+              <p className='text-base'>Github</p>
             </Link>
-            <Link target="_blank" href={personalData.linkedIn}>
+            <Link target="_blank" href={personalData.linkedIn} className='flex items-center gap-3 '>
               <BiLogoLinkedin
                 className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={48}
               />
+              <p className='text-base'>Linkedin</p>
             </Link>
-            <Link target="_blank" href={personalData.twitter}>
+            <Link target="_blank" href={personalData.twitter} className='flex items-center gap-3 '>
               <FaXTwitter
                 className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={48}
               />
+              <p className='text-base'>X (Twitter)</p>
             </Link>
-            <Link target="_blank" href={personalData.stackOverflow}>
+            <Link target="_blank" href={personalData.stackOverflow} className='flex items-center gap-3 '>
               <FaStackOverflow
                 className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={48}
               />
+              <p className='text-base'>Stack OverFlow</p>
             </Link>
-            <Link target="_blank" href={personalData.facebook}>
+            <Link target="_blank" href={personalData.facebook} className='flex items-center gap-3 '>
               <FaFacebook
                 className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={48}
               />
+              <p className='text-base'>Facebook</p>
             </Link>
           </div>
         </div>
