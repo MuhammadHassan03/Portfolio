@@ -2,7 +2,7 @@ export const personalData = {
   name: "MUHAMMAD HASSAN",
   profile: "/profile.png",
   designation: "Software Engineer",
-  description:"I’m MUHAMMAD HASSAN, a seasoned web and mobile app developer with over 500 hours of hands-on experience in creating high-quality, scalable solutions. I specialize in both front-end and back-end development, working with a wide range of technologies such as JavaScript, React.js, Node.js, Flutter, and AWS. My expertise spans multiple industries, including transport, logistics, healthcare, and eCommerce. I’m committed to delivering projects on time, maintaining transparent communication, and building long-term relationships with my clients. Let's work together to bring your ideas to life with efficiency and innovation.",
+  description:"Full Stack Developer with 2+ years US startup experience. Expert in React.js, Node.js, React Native, and AWS. Delivered 65% performance improvements and scaled platforms to 50K+ transactions. Specializing in cross-platform apps, real-time features, and modern web development. Serving fintech, healthcare, and SaaS clients with scalable, high-performance solutions.",
   email: "engineermirzahassan@gmail.com",
   phone: "+92 3175429933",
   github: "https://github.com/MuhammadHassan03",

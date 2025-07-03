@@ -3,7 +3,7 @@ export const experiences = [
     id: 1,
     title: "Software Engineer",
     company: "Devellp",
-    duration: "(December 2024 - Present)"
+    duration: "(December 2024 - July 2025)"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const experiences = [
     id: 3,
     title: "React Native Developer",
     company: "Bierman Collective",
-    duration: "(Feburary 2024 - Present)"
+    duration: "(Feburary 2024 - October 2024)"
   },
   {
     id: 4,
@@ -27,6 +27,6 @@ export const experiences = [
     id: 5,
     title: "Self Employed",
     company: "Code and build something everyday.",
-    duration: "(Aug 2021 - Feb 2024)"
+    duration: "(Aug 2021 - Present)"
   }
 ]

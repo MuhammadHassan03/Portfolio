@@ -1,6 +1,6 @@
 export const contactsData = {
     email: 'engineermirzahassan@gmail.com',
-    phone: '+92 3175429933',
+    phone: '+92 317 5429933',
     address: 'Mohallah Mehmood Abad Jhelum - 49600 ',
     github: 'https://github.com/MuhammadHassan03',
     facebook: 'https://www.facebook.com/MirzaHassan07/',
