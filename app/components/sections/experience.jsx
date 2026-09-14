@@ -15,7 +15,17 @@ export default function Experience() {
               </p>
               <div>
                 <h3 className="text-xl font-medium leading-snug">
-                  {job.title} <span className="text-muted">· {job.company}</span>
+                  {job.title}{" "}
+                  <span className="text-muted">
+                    ·{" "}
+                    {job.link ? (
+                      <a href={job.link} target="_blank" rel="noreferrer" className="link">
+                        {job.company}
+                      </a>
+                    ) : (
+                      job.company
+                    )}
+                  </span>
                 </h3>
                 <p className="mt-1 text-sm text-muted">{job.location}</p>
                 {job.highlights.length > 0 && (

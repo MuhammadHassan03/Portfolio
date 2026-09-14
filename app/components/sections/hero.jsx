@@ -30,6 +30,7 @@ export default function Hero() {
               <HiArrowDown size={16} aria-hidden />
             </Link>
             <ExternalLink href={personalData.resume}>Résumé</ExternalLink>
+            <ExternalLink href={personalData.upwork}>Hire on Upwork</ExternalLink>
           </div>
         </div>
 

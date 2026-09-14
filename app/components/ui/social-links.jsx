@@ -1,6 +1,6 @@
 import { personalData } from "@/utils/data/personal-data";
 import { FaGithub, FaLinkedinIn, FaStackOverflow, FaXTwitter } from "react-icons/fa6";
-import { SiLeetcode } from "react-icons/si";
+import { SiLeetcode, SiUpwork } from "react-icons/si";
 
 const links = [
   { href: personalData.github, label: "GitHub", Icon: FaGithub },
@@ -8,6 +8,7 @@ const links = [
   { href: personalData.twitter, label: "X (Twitter)", Icon: FaXTwitter },
   { href: personalData.stackOverflow, label: "Stack Overflow", Icon: FaStackOverflow },
   { href: personalData.leetcode, label: "LeetCode", Icon: SiLeetcode },
+  { href: personalData.upwork, label: "Upwork", Icon: SiUpwork },
 ];
 
 export default function SocialLinks({ className = "" }) {

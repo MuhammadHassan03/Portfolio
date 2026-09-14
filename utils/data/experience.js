@@ -50,6 +50,7 @@ export const experiences = [
     id: 5,
     title: "Freelance Software Engineer",
     company: "Upwork and direct clients",
+    link: "https://www.upwork.com/freelancers/~012de8f7e218ece2ad",
     location: "Remote",
     start: "Aug 2021",
     end: "Present",

@@ -15,6 +15,7 @@ export const personalData = {
   twitter: "https://twitter.com/mirza_hassan07",
   stackOverflow: "https://stackoverflow.com/users/23089473/muhammadhassan",
   leetcode: "https://leetcode.com/MirzaHassan07/",
+  upwork: "https://www.upwork.com/freelancers/~012de8f7e218ece2ad",
   devUsername: "mirzahassan07",
   resume: "https://drive.google.com/file/d/1BeVG5ZwAVFJQvQa1lcqOdk_QzFu3y2Ru/view?usp=sharing",
   siteUrl: "https://devmirzahassan.netlify.app",
