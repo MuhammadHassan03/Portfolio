@@ -1,48 +1,30 @@
-// @flow strict
-
+import { getPosts } from "@/utils/dev-to";
 import { personalData } from "@/utils/data/personal-data";
-import BlogCard from "../components/homepage/blog/blog-card";
-import axios from "axios";
+import PostCard from "../components/sections/post-card";
 
-async function getBlogs() {
-  try {
-    const res = await axios.get(
-      `https://dev.to/api/articles?username=${personalData.devUsername}`
-    );
+export const metadata = { title: `Writing — ${personalData.name}` };
 
-    if (!res) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const data = await res.data;
-
-    return data;
-  } catch (error) {
-    console.log("error", error.message);
-  }
-}
-
-async function page() {
-  const blogs = await getBlogs();
+export default async function BlogPage() {
+  const posts = await getPosts();
   return (
-    <div className="py-8">
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-2xl rounded-md">
-            All Blogs
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+    <section className="container-site py-16 sm:py-24">
+      <p className="eyebrow">Writing</p>
+      <h1 className="display mt-4 text-5xl sm:text-6xl">All posts.</h1>
+      {posts.length ? (
+        <div className="mt-12 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((p) => (
+            <PostCard key={p.id} post={p} />
+          ))}
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
-        {blogs.map((blog, i) => {
-          return <>{blog?.cover_image || <BlogCard blog={blog} key={i} />}</>;
-        })}
-      </div>
-    </div>
+      ) : (
+        <p className="mt-8 text-muted">
+          Nothing published yet. Follow along on{" "}
+          <a href={`https://dev.to/${personalData.devUsername}`} className="link text-ink">
+            dev.to
+          </a>
+          .
+        </p>
+      )}
+    </section>
   );
 }
-
-export default page;

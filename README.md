@@ -1,108 +1,37 @@
-# Muhammad Hassan (Software Engineer + Freelancer) Portfolio
+# Muhammad Hassan — Portfolio
 
-## View live preview [here](https://devmirzahassan.netlify.app/).
+Live: https://devmirzahassan.netlify.app
 
----
+Next.js 14 (App Router) + Tailwind CSS. No UI kit, no animation library. One `Reveal` component for scroll fade-in, one `ChapterRail` for the numbered progress rail on wide screens. Light by default, dark follows the OS.
 
-## Table of Contents :scroll:
+## Page flow
 
-- [Sections](#sections-bookmark)
-- [Demo](#demo-movie_camera)
-- [Installation](#installation-arrow_down)
-- [Getting Started](#getting-started-dart)
-- [Usage](#usage-joystick)
-- [Packages Used](#packages-used-package)
+Hero → 01 What I do → 02 Case studies → 03 Experience → 04 Capabilities → 05 About → 06 Writing → 07 Hire me
 
----
+The order lives in one place, `utils/chapters.js`. Nav links, the chapter rail and section numbers all read from it.
 
-# Sections :bookmark:
-
-- HERO SECTION
-- ABOUT ME
-- EXPERIENCE
-- SKILLS
-- PROJECTS
-- EDUCATION
-- BLOG
-- CONTACTS
-
----
-
-# Installation :arrow_down:
-
-### You will need to download Git and Node to run this project
-
-- [Git](https://git-scm.com/downloads)
-- [Node](https://nodejs.org/en/download/)
-
-#### Make sure you have the latest version of both Git and Node on your computer.
-
-```
-node --version
-git --version
-```
-
-## <br />
-
-# Getting Started :dart:
-
-### Fork and Clone the repo
-
-To Fork the repo click on the fork button at the top right of the page. Once the repo is forked open your terminal and perform the following commands
-
-```
-git clone https://github.com/<YOUR GITHUB USERNAME>/developer-portfolio.git
-
-cd developer-portfolio
-```
-
-### Install packages from the root directory
+## Run locally
 
 ```bash
 npm install
-# or
-yarn install
-```
-
-Then, run the development server:
-
-```bash
+cp .env.example .env   # EmailJS keys for the contact form, optional GTM id
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Edit content
 
----
+Everything a recruiter or client reads is in `utils/data/`:
 
-# Usage :joystick:
+| File | Controls |
+| --- | --- |
+| `personal-data.js` | Name, title, tagline, bio, links, hero proof points, services, hiring process |
+| `projects-data.js` | Case studies (problem / built / result) and research items |
+| `experience.js` | Timeline entries with highlights |
+| `skills.js` | Capability groups; icons resolve via `utils/skill-icon.js` → `public/svg/skills` |
+| `educations.js` | Education and certifications |
 
-Goto [emailjs.com](https://www.emailjs.com/) and create a new account for the mail sending. In free trial you will get 200 mail per month. After setup `emailjs` account, Please create a new `.env` file from `.env.example` file.
+Replace `public/profile.png` with a 4:5 portrait (around 825×1063) to update the photo. Blog posts come from dev.to using `devUsername`, cached for an hour.
 
-Eg:
+## Design tokens
 
-```env
-NEXT_PUBLIC_EMAILJS_SERVICE_ID =
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID =
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY =
-```
-
-### Then, Customize data in the `utils/data` [folder](https://github.com/said7388/developer-portfolio/tree/main/utils/data).
-
----
-
-# Packages Used :package:
-
-| Used Package List  |
-| :----------------: |
-|        next        |
-|  @emailjs/browser  |
-|    lottie-react    |
-| react-fast-marquee |
-|    react-icons     |
-|   react-toastify   |
-|        sass        |
-|    tailwindcss     |
-
----
+Colors are CSS variables in `app/css/globals.css` (`--paper`, `--ink`, `--muted`, `--accent`, `--wash`) exposed to Tailwind as `paper`, `ink`, `muted`, `accent`, `wash`. Reusable classes (`display`, `eyebrow`, `btn-primary`, `btn-ghost`, `chip`, `field`, `rule`, `link`) live in the same file. Fonts: Fraunces for display, Inter for text, JetBrains Mono for labels.

@@ -1,32 +1,61 @@
 export const experiences = [
   {
     id: 1,
-    title: "Software Engineer",
-    company: "Devellp",
-    duration: "(December 2024 - July 2025)"
+    title: "Full Stack / AI Software Engineer",
+    company: "YRA Tech",
+    location: "Massachusetts, USA · Remote",
+    start: "Sep 2025",
+    end: "Present",
+    highlights: [
+      "Reimplementing Testaro accessibility rules (titledEl, nonTable, allCaps, language of parts) as AI-enhanced Python APIs with deterministic patchers and a verification oracle, plus a Node.js client.",
+      "Built a two-way neural translation comparison tool (DeepL, Google Translate, NLLB-200, Opus-MT) with MBR decoding, LLM-as-judge scoring and back-translation confidence, shipped as a Next.js 14 app.",
+      "Scoping perceived-contrast-lab, a research apparatus measuring human perception of text contrast, aimed at a formula competitive with APCA for future WCAG standards.",
+      "Built visual-semantic mismatch detection from Chrome DevTools accessibility trees and screenshots; contributed to a WCAG rules gap analysis against Testaro engines.",
+      "Site admin on YRA Monitor, the company's continuous WCAG 2.2 / EAA scanning and remediation product.",
+    ],
   },
   {
     id: 2,
-    title: "Software Engineer Intern",
+    title: "Software Engineer",
     company: "Devellp",
-    duration: "(October 2024 - December 2024)"
+    location: "USA · Remote",
+    start: "Oct 2024",
+    end: "Jul 2025",
+    highlights: [
+      "Joined as intern, promoted to engineer in two months; owned the React Native app of a full CRM platform live on the US App Store.",
+      "Worked across .NET, Python, Angular, MongoDB, Apple Pay, Twilio and a microservices backend.",
+    ],
   },
   {
     id: 3,
-    title: "React Native Developer",
-    company: "Bierman Collective",
-    duration: "(Feburary 2024 - October 2024)"
+    title: "React Native Developer (Full Stack)",
+    company: "Bierman Collective · PackRat AI",
+    location: "USA · Remote",
+    start: "Feb 2024",
+    end: "Sep 2024",
+    highlights: [
+      "Designed the UI and built server routes for the PackRat AI travel app; shipped iOS and Android builds now past 10K App Store users, operational across Europe.",
+    ],
   },
   {
     id: 4,
-    title: "React Js Internship",
+    title: "React JS Intern",
     company: "Internee.pk",
-    duration: "(Sep 2023 - Oct 2023)"
+    location: "Pakistan",
+    start: "Sep 2023",
+    end: "Oct 2023",
+    highlights: ["Built a real-time chat app with Socket.IO, Express, MongoDB and JWT auth."],
   },
   {
     id: 5,
-    title: "Self Employed",
-    company: "Code and build something everyday.",
-    duration: "(Aug 2021 - Present)"
-  }
-]
+    title: "Freelance Software Engineer",
+    company: "Upwork and direct clients",
+    location: "Remote",
+    start: "Aug 2021",
+    end: "Present",
+    highlights: [
+      "100% Job Success Score on Upwork as an AI Agent & RAG Engineer for full-stack SaaS.",
+      "Hands-on with Retell, Vapi, Bland, Twilio and GoHighLevel for AI voice-agent projects.",
+    ],
+  },
+];

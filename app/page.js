@@ -1,48 +1,26 @@
-import { personalData } from "@/utils/data/personal-data";
-import AboutSection from "./components/homepage/about";
-import Blog from "./components/homepage/blog";
-import ContactSection from "./components/homepage/contact";
-import Education from "./components/homepage/education";
-import Experience from "./components/homepage/experience";
-import HeroSection from "./components/homepage/hero-section";
-import Projects from "./components/homepage/projects";
-import Skills from "./components/homepage/skills";
-import axios from "axios";
+import { getPosts } from "@/utils/dev-to";
+import About from "./components/sections/about";
+import Experience from "./components/sections/experience";
+import Hero from "./components/sections/hero";
+import Hire from "./components/sections/hire";
+import Services from "./components/sections/services";
+import Skills from "./components/sections/skills";
+import Work from "./components/sections/work";
+import Writing from "./components/sections/writing";
 
-async function getData() {
-  try {
-    const res = await axios.get(
-      `https://dev.to/api/articles?username=${personalData.devUsername}`
-    );
-
-    if (!res) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const data = await res.data;
-    console.log(data);
-    const filtered = data
-      .filter((item) => item?.cover_image || "https://picsum.photos/1920/1080")
-      .sort(() => Math.random() - 0.5);
-
-    return filtered;
-  } catch (error) {
-    console.log("error", error.message);
-  }
-}
-
+// Order mirrors utils/chapters.js.
 export default async function Home() {
-  const blogs = await getData();
+  const posts = await getPosts();
   return (
     <>
-      <HeroSection />
-      <AboutSection />
+      <Hero />
+      <Services />
+      <Work />
       <Experience />
       <Skills />
-      <Projects />
-      <Education />
-      <Blog blogs={blogs} />
-      <ContactSection />
+      <About />
+      <Writing posts={posts} />
+      <Hire />
     </>
   );
 }

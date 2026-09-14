@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens. Light is the default; dark follows the OS. Values are space-separated RGB for Tailwind alpha support. */
+:root {
+  --paper: 246 243 238;
+  --ink: 22 20 17;
+  --muted: 92 88 82;
+  --accent: 29 78 216;
+  --wash: 214 226 235; /* pale blue, matches the portrait background */
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: 16 15 14;
+    --ink: 240 236 229;
+    --muted: 168 162 153;
+    --accent: 130 160 255;
+    --wash: 30 38 48;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-paper text-ink antialiased; }
+  ::selection { @apply bg-accent text-paper; }
+  :focus-visible { @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-paper rounded-sm; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+}
+
+@layer components {
+  .container-site { @apply mx-auto w-full max-w-site px-5 sm:px-8; }
+  .eyebrow { @apply font-mono text-xs uppercase tracking-[0.18em] text-muted; }
+  .display { @apply font-serif font-normal tracking-[-0.02em] leading-[1.02]; }
+  .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-medium transition-colors duration-200; }
+  .btn-primary { @apply btn bg-ink text-paper hover:bg-accent; }
+  .btn-ghost { @apply btn border border-ink/20 text-ink hover:border-ink hover:bg-ink/5; }
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full border border-ink/15 px-2.5 py-1 font-mono text-[11px] leading-none text-muted; }
+  .field { @apply w-full rounded-lg border border-ink/20 bg-transparent px-3 py-2.5 text-sm text-ink placeholder:text-muted/60 transition-colors focus:border-accent; }
+  .rule { @apply border-t border-ink/10; }
+  .link { @apply underline decoration-ink/30 underline-offset-4 transition-colors hover:decoration-accent hover:text-accent; }
+}
+
+/* Scroll reveal. Class is flipped by components/ui/reveal.jsx. */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+/* Paper grain: one static radial gradient, no images, no repaint cost. */
+.grain { background-image: radial-gradient(rgb(var(--ink) / 0.06) 0.5px, transparent 0.5px); background-size: 3px 3px; }
